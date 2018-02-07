@@ -91,6 +91,7 @@ def scrape():
 
     mars_data["hemispheres"] = hemi_dicts
 
+    print("SCRAPE COMPLETE")
     #print(mars_data)
 
     return mars_data

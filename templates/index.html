@@ -24,93 +24,113 @@
         <h1 class="jumbotron">Mission to Mars</h1>
         <a href="/scrape" class="button">Scrape New Data</a>
         <div style="padding: 25px; font-size: 200%;" >Featured Mars Image</div>
-            <img alt = "mars image" src = "https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA17832-1920x1200.jpg" style="width:1000px;"> 
+            <img alt = "mars image" src = {{mars.featured_image}} style="width:95%;"> 
         </div>
     </div>
-    <div lass="container text-right">
-        <h2 style="padding: 10px; font-size: 200%;">Latest Mars News</h2>
-        <h2 style="padding: 5px; font-size: 120%;">Mount Sharp 'Photobombs' Mars Curiosity Rover</h2>
-        <h2 style="padding: 2px; font-size: 90%;">A new self-portrait of NASA's Curiosity Mars rover shows the vehicle on Vera Rubin Ridge.</h2>
-    </div>
-    <div lass="container text-right">
-        <h2 style="padding: 10px; font-size: 200%;">Current Weather on Mars</h2>
-        <h2 style="padding: 5px; font-size: 120%; width:500px;">Sol 1951 (Jan 31, 2018), Sunny, high -23C/-9F, low -77C/-106F, pressure at 7.49 hPa, daylight 05:42-17:28</h2>
+
+    <div class="row">
+        <div class = "col-md-6">
+            <div class="container text-left" style="width:500px; padding:20px;">
+                <h2 style="padding: 10px; font-size: 200%; display: inline-block;">Latest Mars News</h2>
+                <h2 style="padding: 5px; font-size: 120%; display: inline-block;">{{mars.news_title}}</h2>
+                <h2 style="padding: 2px; font-size: 90%; display: inline-block;">{{mars.news_p}}</h2>
+            </div>
+        </div>
+        <div class = "col-md-6">
+            <div class="container text-right" style="width:500px; padding:20px;">
+                <h2 style="padding: 10px; font-size: 200%;">Current Weather on Mars</h2>
+                <h2 style="padding: 5px; font-size: 120%;">{{mars.weather}}</h2>
+            </div>
+        </div>
     </div>
 
-    <div style="padding:15px;font-size: 200%;">Mars Fun Facts</div>
-    <div style="padding:10px;">
-        <table border="1" class="dataframe">
-            <thead>
-                <tr style="text-align: right;">
-                    <th></th>
-                    <th></th>
-                    <th>value</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>0</th>
-                    <td>Equatorial Diameter:</td>
-                    <td>6,792 km\\n</td>
-                </tr>
-                <tr>
-                    <th>1</th>
-                    <td>Polar Diameter:</td>
-                    <td>6,752 km\\n</td>
-                </tr>
-                <tr>
-                    <th>2</th>
-                    <td>Mass:</td>
-                    <td>6.42 x 10^23 kg (10.7% Earth)</td>
-                </tr>
-                <tr>
-                    <th>3</th>
-                    <td>Moons:</td>
-                    <td>2 (Phobos &amp; Deimos)</td>
-                </tr>
-                <tr>
-                    <th>4</th>
-                    <td>Orbit Distance:</td>
-                    <td>227,943,824 km (1.52 AU)</td>
-                </tr>
-                <tr>
-                    <th>5</th>
-                    <td>Orbit Period:</td>
-                    <td>687 days (1.9 years)\\n</td>
-                </tr>
-                <tr>
-                    <th>6</th>
-                    <td>Surface Temperature:</td>
-                    <td>-153 to 20 °C</td>
-                </tr>
-                <tr>
-                    <th>7</th>
-                    <td>First Record:</td>
-                    <td>2nd millennium BC</td>
-                </tr>
-                <tr>
-                    <th>8</th>
-                    <td>Recorded By:</td>
-                    <td>Egyptian astronomers</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="container align-center">
+        <div class="text align-center" style="padding:15px;font-size: 200%;">Mars Fun Facts</div>
+            <!-- {{mars.facts}} was having formatting problems importing this one straight from db, but data wouldn't really change with scrape?-->
+            <table border="1" class="dataframe">
+                <thead>
+                    <tr style="text-align: right;">
+                        <th></th>
+                        <th></th>
+                        <th>value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>0</th>
+                        <td>Equatorial Diameter:</td>
+                        <td>6,792 km\\n</td>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+                        <td>Polar Diameter:</td>
+                        <td>6,752 km\\n</td>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <td>Mass:</td>
+                        <td>6.42 x 10^23 kg (10.7% Earth)</td>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <td>Moons:</td>
+                        <td>2 (Phobos &amp; Deimos)</td>
+                    </tr>
+                    <tr>
+                        <th>4</th>
+                        <td>Orbit Distance:</td>
+                        <td>227,943,824 km (1.52 AU)</td>
+                    </tr>
+                    <tr>
+                        <th>5</th>
+                        <td>Orbit Period:</td>
+                        <td>687 days (1.9 years)\\n</td>
+                    </tr>
+                    <tr>
+                        <th>6</th>
+                        <td>Surface Temperature:</td>
+                        <td>-153 to 20 °C</td>
+                    </tr>
+                    <tr>
+                        <th>7</th>
+                        <td>First Record:</td>
+                        <td>2nd millennium BC</td>
+                    </tr>
+                    <tr>
+                        <th>8</th>
+                        <td>Recorded By:</td>
+                        <td>Egyptian astronomers</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     
-    <div style: "padding:25px;">----</div>
-    
-    <div style="padding: 10px; font-size: 120%;" >Cerberus Hemisphere Enhanced</div>
-        <img alt = "mars image" src = "https://astrogeology.usgs.gov/cache/images/cfa62af2557222a02478f1fcd781d445_cerberus_enhanced.tif_full.jpg" style="width:500px"> 
+    <div class="text align-center" style: "padding:25px;">----</div>
+    <div class="row">
+        <div class = "col-md-6">
+            <div style="padding: 10px; font-size: 120%;" >{{mars.hemispheres[0].title}}</div>
+                <img alt = "mars image" src = {{mars.hemispheres[0].img_url}} style="width:450px"> 
+            </div>
+        </div>
+        <div class = "col-md-6" >
+            <div style="padding: 10px; font-size: 120%;" >{{mars.hemispheres[1].title}}</div>
+                <img alt = "mars image" src = {{mars.hemispheres[1].img_url}} style="width:450px"> 
+            </div>
+        </div>
     </div>
-    <div style="padding: 10px; font-size: 120%;" >Schiaparelli Hemisphere Enhanced</div>
-        <img alt = "mars image" src = "https://astrogeology.usgs.gov/cache/images/3cdd1cbf5e0813bba925c9030d13b62e_schiaparelli_enhanced.tif_full.jpg" style="width:500px"> 
-    </div>
-    <div style="padding: 10px; font-size: 120%;" >Syrtis Major Hemisphere Enhanced</div>
-        <img alt = "mars image" src = "https://astrogeology.usgs.gov/cache/images/ae209b4e408bb6c3e67b6af38168cf28_syrtis_major_enhanced.tif_full.jpg" style="width:500px"> 
-    </div>
-    <div style="padding: 10px; font-size: 120%;" >Valles Marineris Hemisphere Enhanced</div>
-        <img alt = "mars image" src = "https://astrogeology.usgs.gov/cache/images/7cf2da4bf549ed01c17f206327be4db7_valles_marineris_enhanced.tif_full.jpg" style="width:500px"> 
-    </div>
+    <div class="row">
+         <div class = "col-md-6">
+            <div style="padding: 10px; font-size: 120%;" >{{mars.hemispheres[2].title}}</div>
+                <img alt = "mars image" src = {{mars.hemispheres[2].img_url}} style="width:450px"> 
+            </div>
+        </div>
+        <div class = "col-md-6">
+                <div style="padding: 10px; font-size: 120%;" >{{mars.hemispheres[3].title}}</div>
+                    <img alt = "mars image" src = {{mars.hemispheres[3].img_url}} style="width:450px"> 
+                </div>
+            </div>
+        </div>
 
 
 </body>
